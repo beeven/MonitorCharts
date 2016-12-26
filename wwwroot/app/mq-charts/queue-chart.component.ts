@@ -34,7 +34,12 @@ export class QueueChartComponent implements OnInit  {
                 data:['销量']
             },
             xAxis: {
-                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"]
+                data: ["衬衫","羊毛衫","雪纺衫","裤子","高跟鞋","袜子"],
+                type: 'category',
+                axisLabel: {
+                    rotate: 45,
+                    interval: 0
+                }
             },
             yAxis: {},
             series: [{

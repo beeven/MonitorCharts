@@ -10,7 +10,25 @@ export class MQService {
     constructor(private http: Http) {}
 
     getQueueStatus(): Observable<QueueStatus[]> {
-        return this.http.get(this.mqServiceUrl)
-                   .map( response => response.json() as QueueStatus[] );
+        // return this.http.get(this.mqServiceUrl)
+        //            .map( response => response.json() as QueueStatus[] );
+        return Observable.timer(1000,3000).map(()=>[
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+            {name: "Queue1", depth: Math.random()*1000},
+        ])
     }
 }
